@@ -29,7 +29,19 @@ class MyApp:
 			self.button1["background"] = "yellow"
 		else:
 			self.button1["background"] = "green"
-	
+		
+		
+		self.button2 = button(self.mycontainer1)
+		self.button2.configure(text="cancel", background= "red")
+		self.button2.grid(row=0, column=1)
+		self.button2.bind("<button-2>", self.button1click)
+		
+	def button1click(self, event):
+	    if self.button2["background"] == "blue":
+	                self.button2["background"] = "red"
+	    else:
+	                self.button2["background"] = "blue"    
+	   
 		
 root = Tk()
 myapp = MyApp(root)
