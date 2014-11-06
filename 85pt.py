@@ -19,9 +19,16 @@ class MyApp:
 		
 		self.button1 = Button(self.myContainer1)
 		self.button1.configure(text="OK", background= "green")
-		self.button1.grid(row=0, column=0)	
+		self.button1.grid(row=0, column=0)
+		
+		self.button2 = Button(self.myContainer1)
+		self.button2.configure(text="cancel", background= "red")
+		self.button2.grid(row=0, column=1)
+		
+			
 		# Do not change <Button-1> when you create Button 2 :)
-		self.button1.bind("<Button-1>", self.button1Click) ### (1)
+		self.button1.bind("<Button-1>", self.button1Click)### (1)
+		self.button2.bind("<Button-1>", self.button2Click)
 		
 		
 	def button1Click(self, event):    ### (3)
@@ -31,12 +38,9 @@ class MyApp:
 			self.button1["background"] = "green"
 		
 		
-		self.button2 = button(self.mycontainer1)
-		self.button2.configure(text="cancel", background= "red")
-		self.button2.grid(row=0, column=1)
-		self.button2.bind("<button-2>", self.button1click)
 		
-	def button1click(self, event):
+		
+	def button2Click(self, event):
 	    if self.button2["background"] == "blue":
 	                self.button2["background"] = "red"
 	    else:
